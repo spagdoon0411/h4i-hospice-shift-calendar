@@ -6,10 +6,10 @@ import FullCalendar from '@fullcalendar/react';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import "./App.css";
-import "./shiftCalendar.css"
+import "./newCalendar.css"
 import mouseOverIcon from "./mouseovericon.svg"
 
-export default function ShiftCalendar() {
+export default function NewCalendar() {
 
     function handleMouseEnter(info) {
         const nameAddressString = info.event.title;
@@ -73,13 +73,12 @@ export default function ShiftCalendar() {
         </div>
     )
 
-    function handleMouseLeave(info) {
+    function handleMouseLeave() {
         const root = ReactDOM.createRoot(
             document.getElementById("extended-info-container")
         );
         root.render(extendedInfoPlaceholder);
     }
-
 
     const expandedCalendar = <FullCalendar
         className='expanded-shift-calendar'
@@ -113,7 +112,7 @@ export default function ShiftCalendar() {
         dayMaxEvents={true} 
         weekends={true}
         events={eventShiftsFormatted}
-        eventMaxStack={2}
+        eventMaxStack={3}
         displayEventEnd={true}
         eventMouseEnter={(info) => handleMouseEnter(info)}
         eventMouseLeave={(info) => handleMouseLeave(info)}
@@ -124,7 +123,7 @@ export default function ShiftCalendar() {
             document.getElementById("shift-calendar")
         );
 
-        if (window.innerWidth > 768) {
+        if (window.innerWidth > 900) {
             root.render(expandedCalendar)
         } else {
             root.render(minimizedCalendar)
