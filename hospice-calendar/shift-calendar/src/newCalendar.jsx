@@ -5,7 +5,6 @@ import { formatDate } from '@fullcalendar/core';
 import FullCalendar from '@fullcalendar/react';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import "./App.css";
 import "./newCalendar.css"
 import mouseOverIcon from "./mouseovericon.svg"
 
